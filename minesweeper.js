@@ -3,25 +3,25 @@ document.addEventListener('DOMContentLoaded', startGame)
 //define board object size here
 var board = {
       cells: [
-                {row : 0, col : 0, isMine: false, hidden: true}, 
-                {row : 0, col : 1, isMine: false, hidden: true}, 
-                {row : 0, col : 2, isMine: false, hidden: true}, 
-                {row : 0, col : 3, isMine: false, hidden: true},
+                {row : 0, col : 0, isMine: randomMine(), hidden: true}, 
+                {row : 0, col : 1, isMine: randomMine(), hidden: true}, 
+                {row : 0, col : 2, isMine: randomMine(), hidden: true}, 
+                {row : 0, col : 3, isMine: randomMine(), hidden: true},
 
-                {row : 1, col : 0, isMine: false, hidden: true}, 
-                {row : 1, col : 1, isMine: false, hidden: true}, 
-                {row : 1, col : 2, isMine: false, hidden: true}, 
-                {row : 1, col : 3, isMine: false, hidden: true},
+                {row : 1, col : 0, isMine: randomMine(), hidden: true}, 
+                {row : 1, col : 1, isMine: randomMine(), hidden: true}, 
+                {row : 1, col : 2, isMine: randomMine(), hidden: true}, 
+                {row : 1, col : 3, isMine: randomMine(), hidden: true},
 
-                {row : 2, col : 0, isMine: true, hidden: true}, 
-                {row : 2, col : 1, isMine: false, hidden: true}, 
-                {row : 2, col : 2, isMine: true, hidden: true}, 
-                {row : 2, col : 3, isMine: false, hidden: true},
+                {row : 2, col : 0, isMine: randomMine(), hidden: true}, 
+                {row : 2, col : 1, isMine: randomMine(), hidden: true}, 
+                {row : 2, col : 2, isMine: randomMine(), hidden: true}, 
+                {row : 2, col : 3, isMine: randomMine(), hidden: true},
 
-                {row : 3, col : 0, isMine: false, hidden: true}, 
-                {row : 3, col : 1, isMine: false, hidden: true}, 
-                {row : 3, col : 2, isMine: true, hidden: true }, 
-                {row : 3, col : 3, isMine: false, hidden: true},
+                {row : 3, col : 0, isMine: randomMine(), hidden: true}, 
+                {row : 3, col : 1, isMine: randomMine(), hidden: true}, 
+                {row : 3, col : 2, isMine: randomMine(), hidden: true }, 
+                {row : 3, col : 3, isMine: randomMine(), hidden: true},
 
 
                 
@@ -36,9 +36,19 @@ var board = {
               
               
               
+ // lets try make a button that resets the board. could it just be a button that reloads the page? 
+ 
+ function resetBoard () {
+  window.location.reload(false);
+ }
               
-              
-              
+ function randomMine() {
+  if (Math.random() < 0.25) {
+    return true
+  } else {
+    return false
+  }
+}             
               
 
 function startGame () {

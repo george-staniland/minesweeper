@@ -1,14 +1,37 @@
 html, body {
   height: 100%;
-  font-family: 'Open Sans', sans-serif
+  font-family: 'Helvetica', sans-serif
 }
+
+button {
+  margin: 20px;
+  padding: 5px;
+  border-width: 5px;
+}
+
+
 
 body {
   display: flex;
   align-items: center;
   justify-content: flex-center;
   flex-direction: column;
-  background-color: bisque;
+  background: linear-gradient(-45deg, #39f927,#ffe27c,#7c97ff );
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 5s ease-in-out infinite;  
+}
+
+@keyframes change {
+  0% { 
+    background-position: 0 50%;
+  }
+  50% { 
+    background-position: 100% 50%;
+  }
+  100% { 
+    background-position: 0 50%;
+  }
 }
 
 #message, #notes {
@@ -59,3 +82,5 @@ div.hidden:hover {
 div.marked, div.marked:hover {
   background: no-repeat center/60% url("images/mark.svg") deepskyblue;
 }
+
+
